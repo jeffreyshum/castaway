@@ -1,7 +1,8 @@
 import { FC } from "react"
+import { useOverlay } from "../OverlayContext"
 import styles from "./Card.module.css"
 
-interface CardProps {
+export interface CardProps {
 	id: number
 	title: string
 	url: string
@@ -14,8 +15,14 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = (props) => {
+	const { update } = useOverlay()
+
 	return (
-		<div className={styles.card}>
+		<div
+			className={styles.card}
+			onClick={() => {
+				update(props)
+			}}>
 			<div>
 				<img
 					className={styles.logo}

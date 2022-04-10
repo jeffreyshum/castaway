@@ -3,6 +3,8 @@ import { FormEvent, useEffect, useState } from "react"
 import Card from "../components/Card/Card"
 import styles from "../styles/index.module.css"
 import dynamic from "next/dynamic"
+import OverlayContext from "../components/OverlayContext"
+import Overlay from "../components/Overlay/Overlay"
 
 const Anime = dynamic(import("react-anime"), { ssr: false })
 
@@ -26,6 +28,7 @@ interface ApiResponse {
 const IndexPage: NextPage = () => {
 	const [query, setQuery] = useState("")
 	const [viewableResults, setViewableResults] = useState<any>()
+	const [selected, setSelected] = useState<any>()
 
 	useEffect(() => {
 		if (!query) return
@@ -48,7 +51,9 @@ const IndexPage: NextPage = () => {
 	}, [query])
 
 	return (
-		<>
+		<OverlayContext.Provider
+			value={{ selected: selected, update: setSelected }}>
+			<Overlay {...selected} />
 			<form
 				className={styles.form}
 				onSubmit={(e: FormEvent<any>) => {
@@ -75,7 +80,7 @@ const IndexPage: NextPage = () => {
 					</Anime>
 				)}
 			</section>
-		</>
+		</OverlayContext.Provider>
 	)
 }
 
