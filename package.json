@@ -12,6 +12,7 @@
     "next": "12.1.4",
     "podcastdx-client": "^5.0.0",
     "react": "18.0.0",
+    "react-anime": "^4.1.1",
     "react-dom": "18.0.0"
   },
   "devDependencies": {

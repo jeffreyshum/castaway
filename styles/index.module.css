@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.input {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 2rem;
+    background-color: var(--bg-color-input);
+    color: var(--font-color-input);
+}
+
+.viewSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-275px);
+}
+
+.viewSection > div{
+    width: min(80%, 20rem);
+    height: 30rem;
+}
+
+@media (min-width: 959px) {
+    .viewSection { 
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

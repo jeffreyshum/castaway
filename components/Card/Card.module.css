@@ -1,0 +1,35 @@
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    background-color: var(--bg-color-card);
+    color: var(--font-color-secondary);
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+    width: min(80%, 20rem);
+    height: 90%;
+    padding-bottom: 1.2rem;
+}
+
+.card:hover {
+    transform: scale(105%);
+}
+
+.logo { 
+    width: 15rem;
+    height: 15rem;
+}
+
+.link {
+    color: inherit;
+}
+
+.author {
+    color: var(--font-color-author);
+    font-size: 1.2rem;
+}

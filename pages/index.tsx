@@ -1,5 +1,10 @@
 import { NextPage } from "next"
 import { FormEvent, useEffect, useState } from "react"
+import Card from "../components/Card/Card"
+import styles from "../styles/index.module.css"
+import dynamic from "next/dynamic"
+
+const Anime = dynamic(import("react-anime"), { ssr: false })
 
 interface ApiResponse {
 	podcasts: {
@@ -13,6 +18,7 @@ interface ApiResponse {
 			author: string
 			image: string
 			language: string
+			link: string
 		}[]
 	}
 }
@@ -24,31 +30,51 @@ const IndexPage: NextPage = () => {
 	useEffect(() => {
 		if (!query) return
 
+		setViewableResults(<></>)
+
 		fetch(`/api/search?query=${query}`)
 			.then((response) => response.json())
-			.then((data: ApiResponse) =>
-				setViewableResults(
-					data.podcasts.results.map((entry) => {
-						return entry.title
-					})
-				)
-			)
+			.then((data: ApiResponse) => {
+				if (!data.podcasts.results.entries) {
+					setViewableResults("No Podcasts Could Be Found")
+				} else {
+					setViewableResults(
+						data.podcasts.results.map((entry) => (
+							<Card {...entry} key={entry.title} />
+						))
+					)
+				}
+			})
 	}, [query])
 
 	return (
 		<>
 			<form
+				className={styles.form}
 				onSubmit={(e: FormEvent<any>) => {
 					e.preventDefault()
 					setQuery(e.currentTarget.elements.search.value)
 				}}>
 				<input
+					className={styles.input}
 					type="text"
 					placeholder="Search Podcasts"
 					name="search"
+					autoFocus
+					autoComplete="off"
 				/>
 			</form>
-			{viewableResults}
+			<section className={styles.viewSection}>
+				{viewableResults && (
+					<Anime
+						translateX="270"
+						loop={false}
+						delay={(el, index: number) => index * 50}
+						direction="alternate">
+						{viewableResults}
+					</Anime>
+				)}
+			</section>
 		</>
 	)
 }

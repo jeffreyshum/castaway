@@ -4,7 +4,14 @@
 }
 
 :root {
-
+    --font-color-primary: white;
+    --font-color-secondary: white;
+    --font-color-input: black;
+    --font-color-author: grey;
+    --bg-color-primary: #222222;
+    --bg-color-input: lightgrey;
+    --bg-color-card: #3A3B3C;
+    --box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
 * {
@@ -16,10 +23,14 @@ button,
 textarea,
 select {
 	font: inherit;
+    color: inherit;
 }
 
 html,
 body {
     font-family: "Lato", sans-serif;
     overflow-x: hidden;
+    background-color: var(--bg-color-primary);
+    color: var(--font-color-primary);
+    text-align: center;
 }
