@@ -69,7 +69,7 @@ const IndexPage: NextPage = () => {
 					<Anime
 						translateX="270"
 						loop={false}
-						delay={(el, index: number) => index * 50}
+						delay={(el: HTMLElement, index: number) => index * 50}
 						direction="alternate">
 						{viewableResults}
 					</Anime>
