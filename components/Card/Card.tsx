@@ -14,7 +14,6 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = (props) => {
-	console.log(props)
 	return (
 		<div className={styles.card}>
 			<div>
@@ -22,6 +21,7 @@ const Card: FC<CardProps> = (props) => {
 					className={styles.logo}
 					src={props.image}
 					alt={`${props.title} logo`}
+					onError={(e: any) => (e.target.src = "/images/default.png")}
 				/>
 			</div>
 			<div>
@@ -31,10 +31,16 @@ const Card: FC<CardProps> = (props) => {
 						target="_blank"
 						rel="noreferrer"
 						href={props.link}>
-						{props.title}
+						{props.title.length > 50
+							? props.title.substring(0, 49) + " . . ."
+							: props.title}
 					</a>
 				</h1>
-				<h2 className={styles.author}>{`By ${props.author}`}</h2>
+				<h2 className={styles.author}>{`By ${
+					props.author.length > 30
+						? props.author.substring(0, 30) + " . . ."
+						: props.author
+				}`}</h2>
 			</div>
 			<p>
 				{props.description.length > 150
