@@ -13,3 +13,95 @@
     flex-direction: column;
     background: var(--bg-shadow-overlay);
 }
+
+.container {
+    z-index: 100;
+    width: 60%;
+    height: 90%;
+    border-radius: 3rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+.top {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.bottom {
+    height: 5%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.splash {
+    width: 20rem;
+}
+
+.button {
+    color: var(--font-color-primary);
+    background-color: var(--bg-color-close-button);
+    border: none;
+    border-radius: 5px;
+    font-size: 2.3rem;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 1rem;
+    margin-bottom: 0rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.link {
+    color: lime;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.genreContainer {
+   padding-top: 0.5rem;
+}
+
+.genre {
+    margin: 0.5rem;
+    border-radius: 5px;
+    padding-right: 4px;
+    padding-left: 4px;
+    background: red;
+}
+
+
+@media (max-width: 759px) {
+    .container {
+        width: 85%;
+        padding-bottom: 2rem;
+    }
+}

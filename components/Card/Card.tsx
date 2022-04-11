@@ -12,6 +12,7 @@ export interface CardProps {
 	image: string
 	language: string
 	link: string
+	categories: { [key: number]: string }
 }
 
 const Card: FC<CardProps> = (props) => {

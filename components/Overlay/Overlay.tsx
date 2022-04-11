@@ -9,9 +9,46 @@ const Overlay: FC<CardProps> = (props) => {
 	if (!props.title) return <></>
 
 	return (
-		<section className={styles.overlay}>
-			<button onClick={() => update({})}>Close</button>
-			{props.title}
+		<section
+			id="overlay"
+			className={styles.overlay}
+			onClick={(e: any) => {
+				if (e.target.id === "overlay" || "close") update({})
+			}}>
+			<div className={styles.container}>
+				<div className={styles.top}>
+					<button id="close" className={styles.button}>
+						Close
+					</button>
+				</div>
+				<img
+					className={styles.splash}
+					src={props.image}
+					alt={`${props.title} logo`}
+					onError={(e: any) => (e.target.src = "/images/default.png")}
+				/>
+				<div className={styles.center}>
+					<h1 className={styles.title}>{props.title}</h1>
+					<p>{props.author}</p>
+					<div className={styles.genreContainer}>
+						{Object.values(props.categories).map((entry) => (
+							<label className={styles.genre} key={entry}>
+								{entry.toString()}
+							</label>
+						))}
+					</div>
+					<p className={styles.description}>{props.description}</p>
+				</div>
+				<div className={styles.bottom}>
+					<a
+						className={styles.link}
+						target="_blank"
+						rel="noreferrer"
+						href={props.link}>
+						▶ Play Here
+					</a>
+				</div>
+			</div>
 		</section>
 	)
 }

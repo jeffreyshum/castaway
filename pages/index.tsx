@@ -21,6 +21,7 @@ interface ApiResponse {
 			image: string
 			language: string
 			link: string
+			categories: { [key: number]: string }
 		}[]
 	}
 }
