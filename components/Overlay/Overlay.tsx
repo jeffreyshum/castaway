@@ -13,11 +13,14 @@ const Overlay: FC<CardProps> = (props) => {
 			id="overlay"
 			className={styles.overlay}
 			onClick={(e: any) => {
-				if (e.target.id === "overlay" || "close") update({})
+				if (e.target.id === "overlay") update({})
 			}}>
 			<div className={styles.container}>
 				<div className={styles.top}>
-					<button id="close" className={styles.button}>
+					<button
+						id="close"
+						onClick={() => update({})}
+						className={styles.button}>
 						Close
 					</button>
 				</div>
