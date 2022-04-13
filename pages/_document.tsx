@@ -25,6 +25,14 @@ class MyDocument extends Document {
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="msapplication-TileColor" content="#da532c" />
 					<meta name="theme-color" content="#ffffff" />
+					<meta name="author" content="Jeffrey Shum" />
+					<meta property="og:image" content="/favicon-32x32.png" />
+					<meta property="og:title" content="Cast Away" />
+					<meta
+						property="og:description"
+						content="Podcast Searching Platform"
+					/>
+					<meta property="og:type" content="website" />
 				</Head>
 				<body>
 					<Main />
