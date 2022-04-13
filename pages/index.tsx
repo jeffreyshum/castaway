@@ -54,6 +54,13 @@ const IndexPage: NextPage = () => {
 	return (
 		<OverlayContext.Provider
 			value={{ selected: selected, update: setSelected }}>
+			<nav className={styles.nav}>
+				<img
+					className={styles.logo}
+					src="/images/logo.svg"
+					alt="Logo"
+				/>
+			</nav>
 			<Overlay {...selected} />
 			<form
 				className={styles.form}

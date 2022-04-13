@@ -29,6 +29,11 @@
     height: 30rem;
 }
 
+.logo {
+    width: 15rem;
+    margin-top: -3rem;
+}
+
 @media (min-width: 959px) {
     .viewSection { 
         flex-direction: row;
