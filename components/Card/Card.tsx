@@ -26,6 +26,7 @@ const Card: FC<CardProps> = (props) => {
 			}}>
 			<div>
 				<img
+					loading="lazy"
 					className={styles.logo}
 					src={props.image}
 					alt={`${props.title} logo`}
