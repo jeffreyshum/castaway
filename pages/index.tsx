@@ -61,6 +61,7 @@ const IndexPage: NextPage = () => {
 					src="/images/logo.svg"
 					alt="Logo"
 				/>
+				<h1 className={styles.title}>Cast Away</h1>
 			</nav>
 			<form
 				className={styles.form}

@@ -3,11 +3,17 @@
     src: url("/fonts/Lato-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Pirata";
+    src: url("/fonts/PirataOne-Regular.ttf");
+}
+
 :root {
     --font-color-primary: white;
     --font-color-secondary: white;
     --font-color-input: black;
     --font-color-author: grey;
+    --font-color-title: aqua;
     --bg-color-primary: #222222;
     --bg-color-input: lightgrey;
     --bg-color-card: #3A3B3C;
