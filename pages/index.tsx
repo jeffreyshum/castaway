@@ -111,6 +111,13 @@ const IndexPage: NextPage = () => {
 					<br></br>
 					Copyright © {new Date().getFullYear()} Jeffrey Shum. All
 					Rights Reserved.
+					<a href="https://github.com/jeffreyshum/castaway">
+						<img
+							className={styles.footerLogo}
+							src="/icons/github.png"
+							alt="GitHub"
+						/>
+					</a>
 				</p>
 			</footer>
 		</OverlayContext.Provider>
