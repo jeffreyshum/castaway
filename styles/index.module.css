@@ -22,6 +22,7 @@
     align-items: center;
     transform: translateX(-275px);
     padding-bottom: 5rem;
+    min-height: 80vh;
 }
 
 .viewSection > div{
@@ -32,6 +33,19 @@
 .logo {
     width: 15rem;
     margin-top: -3rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.footerLogo {
+    height: 0.8rem;
+    margin: auto 0.2rem;
 }
 
 @media (min-width: 959px) {

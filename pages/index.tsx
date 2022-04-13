@@ -54,6 +54,7 @@ const IndexPage: NextPage = () => {
 	return (
 		<OverlayContext.Provider
 			value={{ selected: selected, update: setSelected }}>
+			<Overlay {...selected} />
 			<nav className={styles.nav}>
 				<img
 					className={styles.logo}
@@ -61,7 +62,6 @@ const IndexPage: NextPage = () => {
 					alt="Logo"
 				/>
 			</nav>
-			<Overlay {...selected} />
 			<form
 				className={styles.form}
 				onSubmit={(e: FormEvent<any>) => {
@@ -88,6 +88,21 @@ const IndexPage: NextPage = () => {
 					</Anime>
 				)}
 			</section>
+			<footer className={styles.footer}>
+				<p>
+					Built with{" "}
+					<a href="https://nextjs.org/">
+						<img
+							className={styles.footerLogo}
+							src="/icons/next.svg"
+							alt="NextJS Logo"
+						/>
+					</a>
+					<br></br>
+					Copyright © {new Date().getFullYear()} Jeffrey Shum. All
+					Rights Reserved.
+				</p>
+			</footer>
 		</OverlayContext.Provider>
 	)
 }
