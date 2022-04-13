@@ -21,7 +21,7 @@ const Overlay: FC<CardProps> = (props) => {
 						id="close"
 						onClick={() => update({})}
 						className={styles.button}>
-						Close
+						X
 					</button>
 				</div>
 				<img

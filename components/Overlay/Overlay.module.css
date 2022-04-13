@@ -59,10 +59,12 @@
 
 .button {
     color: var(--font-color-primary);
-    background-color: var(--bg-color-close-button);
+    background-color: inherit;
     border: none;
     border-radius: 5px;
     font-size: 2.3rem;
+    margin: -1.5rem;
+    margin-bottom: 2rem;
 }
 
 .button:hover {
