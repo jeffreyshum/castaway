@@ -66,8 +66,17 @@ const IndexPage: NextPage = () => {
 				className={styles.form}
 				onSubmit={(e: FormEvent<any>) => {
 					e.preventDefault()
+					const splash = e.currentTarget.splash
+					splash.style.visibility = "visible"
 					setQuery(e.currentTarget.elements.search.value)
+					setTimeout(() => (splash.style.visibility = "hidden"), 800)
 				}}>
+				<img
+					className={styles.splash}
+					src="/images/splash.gif"
+					alt="splash"
+					id="splash"
+				/>
 				<input
 					className={styles.input}
 					type="text"
