@@ -67,8 +67,14 @@
 }
 
 .splash {
-    margin-bottom: -4rem;
+    margin-bottom: -5rem;
     visibility: hidden;
+    z-index: 2;
+}
+
+.label {
+    font-size: 1.5rem;
+    font-family: "Pirata";
 }
 
 @media (min-width: 959px) {

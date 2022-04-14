@@ -78,6 +78,7 @@ const IndexPage: NextPage = () => {
 					alt="splash"
 					id="splash"
 				/>
+				<label className={styles.label}>Search The Seas</label>
 				<input
 					className={styles.input}
 					type="text"
