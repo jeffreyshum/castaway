@@ -21,7 +21,7 @@ const Overlay: FC<CardProps> = (props) => {
 						id="close"
 						onClick={() => update({})}
 						className={styles.button}>
-						X
+						x
 					</button>
 				</div>
 				<img
@@ -48,7 +48,7 @@ const Overlay: FC<CardProps> = (props) => {
 						target="_blank"
 						rel="noreferrer"
 						href={props.link}>
-						▶ Play Here
+						▶ Listen
 					</a>
 				</div>
 			</div>

@@ -14,10 +14,13 @@
     --font-color-input: black;
     --font-color-author: grey;
     --font-color-title: aqua;
+    --font-color-play-button: lime;
     --bg-color-primary: #222222;
     --bg-color-input: lightgrey;
     --bg-color-card: #3A3B3C;
     --bg-color-close-button: red;
+    --bg-color-genre: red;
+
     --bg-shadow-overlay: rgba(0, 0, 0, 0.75);
     --box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
