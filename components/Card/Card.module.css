@@ -19,6 +19,8 @@
 
 .card:hover {
     transform: scale(105%);
+    transition: transform 0.25s;
+    cursor: pointer;
 }
 
 .logo { 

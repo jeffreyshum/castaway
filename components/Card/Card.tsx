@@ -17,7 +17,6 @@ export interface CardProps {
 
 const Card: FC<CardProps> = (props) => {
 	const { update } = useOverlay()
-
 	return (
 		<div
 			className={styles.card}
@@ -35,15 +34,9 @@ const Card: FC<CardProps> = (props) => {
 			</div>
 			<div>
 				<h1>
-					<a
-						className={styles.link}
-						target="_blank"
-						rel="noreferrer"
-						href={props.link}>
-						{props.title.length > 50
-							? props.title.substring(0, 49) + " . . ."
-							: props.title}
-					</a>
+					{props.title.length > 50
+						? props.title.substring(0, 49) + " . . ."
+						: props.title}
 				</h1>
 				<h2 className={styles.author}>{`By ${
 					props.author.length > 30
