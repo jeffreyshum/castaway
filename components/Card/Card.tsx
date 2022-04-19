@@ -17,6 +17,7 @@ export interface CardProps {
 
 const Card: FC<CardProps> = (props) => {
 	const { update } = useOverlay()
+
 	return (
 		<div
 			className={styles.card}
