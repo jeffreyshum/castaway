@@ -62,6 +62,7 @@ const Overlay: FC<CardProps> = (props) => {
 								src={image}
 								alt="save"
 								ref={chest}
+								title="Bookmark"
 							/>
 						</button>
 						<label className={alert}>{message}</label>
