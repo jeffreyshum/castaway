@@ -6,6 +6,7 @@ import dynamic from "next/dynamic"
 import OverlayContext from "../components/OverlayContext"
 import Overlay from "../components/Overlay/Overlay"
 import Nav from "../components/Nav/Nav"
+import Footer from "../components/Footer/Footer"
 
 const Anime = dynamic(import("react-anime"), { ssr: false })
 
@@ -93,28 +94,7 @@ const IndexPage: NextPage = () => {
 					</Anime>
 				)}
 			</section>
-			<footer className={styles.footer}>
-				<p>
-					Built with{" "}
-					<a href="https://nextjs.org/">
-						<img
-							className={styles.footerLogo}
-							src="/icons/next.svg"
-							alt="NextJS Logo"
-						/>
-					</a>
-					<br></br>
-					Copyright © {new Date().getFullYear()} Jeffrey Shum. All
-					Rights Reserved.
-					<a href="https://github.com/jeffreyshum/castaway">
-						<img
-							className={styles.footerLogo}
-							src="/icons/github.png"
-							alt="GitHub"
-						/>
-					</a>
-				</p>
-			</footer>
+			<Footer />
 		</OverlayContext.Provider>
 	)
 }
