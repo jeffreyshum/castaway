@@ -1,12 +1,45 @@
-import { FC } from "react"
+import { FC, useEffect, useRef, useState } from "react"
 import { CardProps } from "../Card/Card"
 import { useOverlay } from "../OverlayContext"
 import styles from "./Overlay.module.css"
 
 const Overlay: FC<CardProps> = (props) => {
 	const { update } = useOverlay()
+	const [image, setImage] = useState("")
+	const [message, setMessage] = useState("")
+	const [alert, setAlert] = useState(styles.alertHidden)
+	const chest: any = useRef()
 
+	useEffect(() => {
+		const saved = JSON.parse(localStorage.getItem("saved") || "[]")
+
+		!saved.includes(props.id)
+			? setImage("/images/chest-closed.png")
+			: setImage("/images/chest-open.png")
+	}, [props.id])
+
+	useEffect(() => {
+		setAlert(styles.alertVisibile)
+		setTimeout(() => setAlert(styles.alertHidden), 200)
+	}, [message])
 	if (!props.title) return <></>
+
+	const handleSave = () => {
+		const saved = JSON.parse(localStorage.getItem("saved") || "[]")
+
+		if (!saved.includes(props.id)) {
+			saved.push(props.id)
+			setImage("/images/chest-open.png")
+			setMessage("Podcast Saved")
+		} else {
+			saved.splice(saved.indexOf(props.id), 1)
+			setImage("/images/chest-closed.png")
+			setMessage("Podcast Un-Saved")
+		}
+
+		localStorage.setItem("saved", JSON.stringify(saved))
+	}
+
 	return (
 		<section
 			id="overlay"
@@ -16,12 +49,31 @@ const Overlay: FC<CardProps> = (props) => {
 			}}>
 			<div className={styles.container}>
 				<div className={styles.top}>
-					<button
-						id="close"
-						onClick={() => update({})}
-						className={styles.button}>
-						x
-					</button>
+					<div className={styles.left}>
+						<button
+							className={styles.save}
+							onClick={handleSave}
+							onMouseOver={() =>
+								(chest.current.src = "/images/chest-open.gif")
+							}
+							onMouseLeave={() => (chest.current.src = image)}>
+							<img
+								className={styles.chest}
+								src={image}
+								alt="save"
+								ref={chest}
+							/>
+						</button>
+						<label className={alert}>{message}</label>
+					</div>
+					<div className={styles.right}>
+						<button
+							id="close"
+							onClick={() => update({})}
+							className={styles.button}>
+							x
+						</button>
+					</div>
 				</div>
 				<img
 					className={styles.splash}

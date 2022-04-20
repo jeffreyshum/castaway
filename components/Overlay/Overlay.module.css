@@ -33,10 +33,23 @@
 
 .top {
     display: flex;
-    justify-content: flex-end;
-    margin-left: -5rem;
     margin-top: 2rem;
     width: 100%;
+}
+
+.left, .right {
+    display: flex;
+    flex: 1;
+}
+
+.left {
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.right {
+    justify-content: flex-end;
+    padding-right: 1rem;
 }
 
 .center {
@@ -58,18 +71,31 @@
     width: 20rem;
 }
 
-.button {
+.button, .save {
     color: var(--font-color-primary);
     background-color: inherit;
     border: none;
     border-radius: 5px;
     font-size: 2.3rem;
-    margin: -1.5rem;
+    margin-top: -1.5rem;
     margin-bottom: 2rem;
 }
 
 .button:hover {
     cursor: pointer;
+}
+
+.chest {
+    width: 4rem;
+}
+
+.alertVisible {
+    opacity: 1;
+}
+
+.alertHidden {
+    opacity: 0;
+    transition: all 0.5s linear 2s;
 }
 
 .title {
