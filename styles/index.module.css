@@ -31,11 +31,6 @@
     height: 30rem;
 }
 
-.logo {
-    width: 15rem;
-    margin-top: -3rem;
-}
-
 .footer {
     display: flex;
     justify-content: center;
@@ -48,22 +43,6 @@
 .footerLogo {
     height: 0.8rem;
     margin: auto 0.2rem;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    margin-left: -2.5rem;
-}
-
-.title {
-    color: var(--font-color-title);
-    font-size: 3rem;
-    margin-left: -3rem;
-    margin-top: -3rem;
-    font-family: "Pirata"
 }
 
 .splash {

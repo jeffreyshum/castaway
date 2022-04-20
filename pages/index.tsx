@@ -5,6 +5,7 @@ import styles from "../styles/index.module.css"
 import dynamic from "next/dynamic"
 import OverlayContext from "../components/OverlayContext"
 import Overlay from "../components/Overlay/Overlay"
+import Nav from "../components/Nav/Nav"
 
 const Anime = dynamic(import("react-anime"), { ssr: false })
 
@@ -55,14 +56,7 @@ const IndexPage: NextPage = () => {
 		<OverlayContext.Provider
 			value={{ selected: selected, update: setSelected }}>
 			<Overlay {...selected} />
-			<nav className={styles.nav}>
-				<img
-					className={styles.logo}
-					src="/images/logo.svg"
-					alt="Logo"
-				/>
-				<h1 className={styles.title}>Cast Away</h1>
-			</nav>
+			<Nav />
 			<form
 				className={styles.form}
 				onSubmit={(e: FormEvent<any>) => {
