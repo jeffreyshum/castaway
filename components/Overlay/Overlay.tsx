@@ -7,7 +7,6 @@ const Overlay: FC<CardProps> = (props) => {
 	const { update } = useOverlay()
 
 	if (!props.title) return <></>
-
 	return (
 		<section
 			id="overlay"
@@ -34,11 +33,12 @@ const Overlay: FC<CardProps> = (props) => {
 					<h1 className={styles.title}>{props.title}</h1>
 					<p>{props.author}</p>
 					<div className={styles.genreContainer}>
-						{Object.values(props.categories).map((entry) => (
-							<label className={styles.genre} key={entry}>
-								{entry.toString()}
-							</label>
-						))}
+						{props.categories &&
+							Object.values(props.categories).map((entry) => (
+								<label className={styles.genre} key={entry}>
+									{entry.toString()}
+								</label>
+							))}
 					</div>
 					<p className={styles.description}>{props.description}</p>
 				</div>
