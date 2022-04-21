@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     margin-left: -2.5rem;
 }
 
@@ -17,4 +16,27 @@
 .logo {
     width: 15rem;
     margin-top: -3rem;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--font-color-saved);
+    font-family: "Pirata";
+    font-size: 2rem;
+    text-align: center;
+    margin-top: -4rem;
+    margin-left: 70%;   
+    margin-right: 1rem; 
+}
+
+@media (max-width: 1200px) {
+    .link {
+        margin-left: 5rem;
+    }
 }
