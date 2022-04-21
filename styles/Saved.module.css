@@ -1,0 +1,32 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-275px);
+    padding-bottom: 5rem;
+    min-height: 80vh;
+}
+
+.viewSection > div {
+    width: min(80%, 20rem);
+    height: 30rem;
+}
+
+.viewSection > h2 {
+    transform: translateX(275px);
+}
+
+@media (min-width: 959px) {
+    .viewSection { 
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
