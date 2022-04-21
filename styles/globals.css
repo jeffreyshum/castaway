@@ -21,6 +21,9 @@
     --bg-color-card: #3A3B3C;
     --bg-color-close-button: red;
     --bg-color-genre: red;
+    --bg-scroll: #222222;
+    --bg-scroll-button: white;
+    --bg-scroll-button-hover: grey;
     --bg-shadow-overlay: rgba(0, 0, 0, 0.75);
     --box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
@@ -44,4 +47,21 @@ body {
     background-color: var(--bg-color-primary);
     color: var(--font-color-primary);
     text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-scroll);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-scroll-button);
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-scroll-button-hover);
 }
