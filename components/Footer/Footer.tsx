@@ -24,6 +24,12 @@ const Footer: FC = () => {
 					/>
 				</a>
 			</p>
+			<p>
+				Project For{" "}
+				<a href="https://www.devjam.org/project/101b88d7-a2cb-486f-b1bb-6493acaca3fa">
+					DevJam.org
+				</a>
+			</p>
 		</footer>
 	)
 }

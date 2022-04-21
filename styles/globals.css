@@ -35,7 +35,9 @@
 input,
 button,
 textarea,
-select {
+select,
+a {
+    text-decoration: inherit;
 	font: inherit;
     color: inherit;
 }
